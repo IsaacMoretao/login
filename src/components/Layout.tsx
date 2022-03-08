@@ -11,7 +11,7 @@ export default function Layout(props: LayoutProps) {
     <div style={{
       padding: '35px',
       background: 'white',
-      borderBottom: '1px solid green',
+      borderRadius: '10px',
       marginLeft: '10vh',
       marginRight: '10vh',
     }}>
@@ -21,7 +21,6 @@ export default function Layout(props: LayoutProps) {
        display: 'flex',
        borderBottom: '1px solid green',
        width: '70vh',
-       height: '50px',
      }}>
        {props.children}
      </div>

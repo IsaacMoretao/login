@@ -12,6 +12,10 @@ const clientes = [
   new Cliente('Ana', 18, '4'),
 ]
 
+  function clienteSelecionado(cliente: Cliente) {
+    
+  }
+
   return (
     <div style={{
       display: 'flex',
@@ -19,7 +23,7 @@ const clientes = [
       alignItems: 'center',
       flexWrap: 'wrap',
       height: '100vh',
-      width: '100vh',
+      width: '100%',
       background: 'linear-gradient(to right, rgb(45, 120, 241), hsla(268, 90%, 73%, 0.664))'
     }}>
      <Layout titulo="Cadastro simples">

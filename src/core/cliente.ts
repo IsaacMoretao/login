@@ -9,6 +9,14 @@ export default class Cliente {
     this.id = id
   }
 
+  // var id() =>{
+  //   return this.id
+  //}
+
+  //get id(id: string = null) {
+  //  return this.id
+  //}
+
   static vazio(){
     return new Cliente('', 0)
   }
