@@ -4,12 +4,12 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: rgba(61, 61, 139, 0.644);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  background-color: rgb(218, 218, 218);
 }
 
 * {

@@ -18,13 +18,15 @@ export default function tabela(props: TabelaProps){
       <tr style={{
         display: 'flex',
         justifyContent: 'spaceAround',
-        background: 'rgb(51, 51, 149)'
+        background: 'rgb(51, 51, 149)',
+        color: 'white',
+        borderRadius: '5px'
       }}>
 
         <th style={{
         display: 'flex',
         width: '100px',
-        marginLeft: '40px',
+        marginLeft: '20px',
         
       }}>Código</th>
 
@@ -38,9 +40,14 @@ export default function tabela(props: TabelaProps){
         <th style={{
         display: 'flex',
         width: '100px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
       }}>Idade</th>
         
-       {exibirAcoes ? <th>Ações</th> : false} 
+      {exibirAcoes ? <th style={{
+        display: 'flex',
+        marginRight: '50px'
+      }}>Ações</th> : false}  
       </tr>
     
   )}
@@ -56,7 +63,7 @@ export default function tabela(props: TabelaProps){
           <td >{Cliente.id}</td>
           <td >{Cliente.nome}</td>
           <td >{Cliente.idade}</td>
-          {RenderizarAções(Cliente)}
+          {exibirAcoes ? RenderizarAções(Cliente) : false}
         </tr>
       )
     })
@@ -65,23 +72,34 @@ export default function tabela(props: TabelaProps){
   function RenderizarAções(Cliente: Cliente) {
     return (
       <td>
-      {props.clienteSelecionado ? (
-        <button style={{
+      {props.clienteSelecionado? (
 
-         }}>
+         <button onClick={() => props.clienteSelecionado?.(Cliente)} style={{
+           background: 'none',
+           border: 'None',
+           color: 'blue',
+           height: '35px',
+           width: '35px',
+           cursor: 'pointer'
+          }}>
           {IconeEdicao}
-        </button>
+         </button>
 
-      ) : false}
-       
-
-       {props.clienteExcluido ? (
-      
-        <button>
+       ) : false }
+        
+        {props.clienteExcluido? (
+        <button onClick={() => props.clienteExcluido?.(Cliente)} style={{
+          background: 'rgba(137, 43, 226, 0)',
+          border: 'None',
+          color: 'red',
+          height: '35px',
+          width: '35px',
+          borderRadius: '30px',
+          cursor: 'pointer'
+         }}>
           {IconeLixo}
         </button>
-
-      ) : false}
+        ) : false }
 
       </td>
     )
