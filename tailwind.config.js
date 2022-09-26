@@ -5,26 +5,30 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        blur: 'url(/src/Assets/Background-blur.png)'
-      },
+
       fontFamily: {
-        sans: 'Roboto, sans-serif'
+        sans: 'Poppins, sans-serif'
       },
-      backgroundImage: {
-        'Image': "url('./src/Assets/Images/wallpaper.jpg') "
-      },
+
       colors: {
-        white: {
-          100: '#ffffff61',
-          200: '#ffffff'
+        Primary: {
+          100: '#00B37E',
+          200: '#121214',
+          300: '#fff',
+          400: '#75757570',
+          500: '#E1E1E6',
+          600: '#df4d31'
         },
-        black: {
-          100: '#00000062'
+        Google: {
+          100: '#319d5a',
+          200: '#fab000',
+          300: '#f63832'
         }
-  
+
       },
+
     },
+
   },
   plugins: [],
 }
