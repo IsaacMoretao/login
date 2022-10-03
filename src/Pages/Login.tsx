@@ -20,22 +20,7 @@ export function Login(){
   const [email, setEmail] = useState('');
   const navigate = useNavigate()
 
-  function handleNewUser(){
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user)
-        // ...
 
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-
-    });
-  }
 
   function handleGoogleSignIn(){
     const provider = new GoogleAuthProvider()
@@ -46,7 +31,6 @@ export function Login(){
         if(user){
           navigate('/Login/home');
         }
-
 
       })
       .catch((error) => {
@@ -77,13 +61,23 @@ export function Login(){
 
       <div className="
         flex justify-center items-center
-        bg-Primary-300 flex-col">
+        bg-Primary-300 flex-col p-4 rounded-xl">
 
-        <span>
-          Faça login ou
-          <a href="#">Crie uma conta</a>
+        <span className='text-center'>
+          Faça login
+          <br/> ou <br />
+          <a href="#" className='text-blue-600'>Crie uma conta</a>
         </span>
-        <form onSubmit={handleNewUser} className="
+
+        <button onClick={handleGoogleSignIn} className="
+          bg-Primary-600 flex items-center
+          gap-[5px] p-2 rounded-full
+          hover:border-[2px] hover:border-Google-100" >
+          <GoogleLogo size={25} color="#ffffff" weight="bold" />
+          Entrar com a google
+        </button>
+
+        <form className="
           flex flex-col justify-center
         "  >
 
@@ -116,24 +110,14 @@ export function Login(){
           <button
             type="submit"
             className="
-            bg-Primary-600 flex items-center
+            bg-Primary-600 flex items-center content-center
             gap-[5px] p-2 rounded-full m-2
             hover:border-[2px] hover:border-Google-100" >
             <ArrowSquareIn size={25} color="#ffffff" weight="bold" />
-            Entrar com a google
+            Entrar
           </button>
 
         </form>
-
-       
-
-        <button onClick={handleGoogleSignIn} className="
-          bg-Primary-600 flex items-center
-          gap-[5px] p-2 rounded-full
-          hover:border-[2px] hover:border-Google-100" >
-          <GoogleLogo size={25} color="#ffffff" weight="bold" />
-          Entrar com a google
-        </button>
 
       </div>
     </body>
